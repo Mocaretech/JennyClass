@@ -1,0 +1,277 @@
+Feature of c language 
+1. All other language depend on C language
+2. It is high level language
+3. it is portable
+4. it has inbuilt functions
+5. it is a structured language(Modular programming)
+6. it involves the use of pointers
+7. it is extensive language(you can create and add your function)
+8. compilation, execution is faster
+9.it has dynamic memory allocation
+10. It is case sensitive language
+
+Structure of the C program
+1. Documentation section
+This section is the section that ccontain the details of the program and what it does, it involves the use of comment lines
+2. Link section
+ (This may include #include <stdio.h>) to make reference to some inbuilt function that you want to use in your program i.e the include <stdio.h> contain the function of printf among other function, therefore you dont have to write the function of the printf and use it by making reference to the header file
+3. Definition section
+This section may include, lets say you want to use PI = 3.1425 ten tims in your program, instead of writting the the 3.1425 repeatedly then we use define the 3.1425 as PI like this #define PI 3.1425
+4. Global declaration sections
+This is section outside the curly bracket any, variable declearedin the global variable can be usee in all of the function as against the local variable declaration, for example
+sum(a+b);
+sub();
+{
+a;
+}
+{
+b;
+}
+The sum and sub function can be use in all for the functions in the program as long as the it is under the global variable declaration function
+5. Main section
+NB: In any program there can be only one *MAIN function* and it is compulsory in all program e.g
+void main()
+{
+	declaration
+	executable
+}
+NB: All main function must have executable function e.g printf and scanf etc.
+6. Sub program section (User defined function)
+
+EXAMPLE
+
+//Author : jelil
+Date: 22/10/24
+//program for addition of numbers <--- documentation section
+
+#include <stdio.h>   <---- linking section
+#include <conio.h>  <----- linking section
+
+define MAX 100  <---- definition section
+
+int a = 50;   <---- global variable
+void display(); <--- global variable
+
+void main()  <---- main section
+{
+	printf("Hello world");  <---- executable section
+	display;
+}
+ void display;   <---- sub program section
+
+
+
+EXECUTION PROCESS OF C PROGRAM
+______________________________
+
+		SOURCE CODE
+		     |
+ 		     |
+		     V
+		PREPROCESSOR (#include header files)
+		     |
+		     |
+		     V
+		 COMPILE
+		    |
+		    |
+		    V
+		(SYNTAX ERROR)
+		    |
+		    |
+		    V
+		ASSEMBLER
+		    |
+		    |  (OBJECT FILE GENERATED)
+		    V
+		LINK WITH SYSTEM LIBRARY
+		    |
+		    |  (The system libraries is C library note: c librarary is not a c programming)
+		    V
+		EXECUTION
+		    |		    
+		    |( here, the file that has been linked with the standard c library will now be loaded into 
+		    |computer memory which is the RAM(the hard disk), it is from the hard disk that the CPU will
+		    V process the data and ive output
+		  OUTPUT
+
+
+CONSTANT IN C PROGRAM
+____________________
+
+There are two main type of constant in C
+1. Numerical
+a. integer this may include decimal, octal and hexadecimal
+b. float
+
+Character
+a. single character this include 'a', 'b',/
+b. string Thus include sequence of character e.g "wer" ,"er@" etc
+
+HOW TO DECLARE CONSTANT
+-----------------------
+const int a = 10;
+when constant are declared, then they cannot be changed in the statement, it owuld indicate error
+
+VARIABLE IN C
+_____________
+
+IDENTIFIERS AND KEY WORDS
+________________________
+There are 32 keywords identified in c program
+int,float,char,break,goto, if, for, while,auto, double,continue
+NB: keyword are written in lower case, void
+
+IDENTIFIERS:
+-----------
+sum,Sum, sum_123, _sum 
+
+DATA TYPES IN C
+Types
+
+1. primary or primitive or fundamental data types e.g int,char, float, void,
+a. integers
+i. short int (signed -32768 to 32767  %d ) and unsigned 0 to 65535 %u)
+ii. long int( signed and unsigned)
+format specifier to print integer is %d
+
+Character
+i. signed   -128 to 127
+ii. unsigned  0 to 255
+format specifier to print char is %c
+
+FLOAT
+This is used to store decimal number
+The format specifier is %f
+it can be divided into double (%lf) and long double(%Lf)
+
+
+2. derived
+
+
+3. user defined
+
+OPERATORS IN C
+A. Types of operator based operands
+1. Unary(one operand)==> '-','++', '--', &,sizeof
+2. Binary (two operands)
+3. Ternary (three operands)
+
+Types of operators based on Operations
+a. Arithmetic operators ( +, -, *, /, %)
+b. Assignment (In assignment the LHS must be variable e.g a=c+d and not c+d = a)
+
+c. LOGICAL OPERATORS
+
+This is used to compare between two different expression and come up with a retational conclusion, the operators include &&,||,!
+for example
+if a<3 && b>3
+{
+	printf("true expression");
+}
+or
+a<b && b<c && b>11 && c<10 AND operator 
+a<2 || a==4  OR operator
+
+In a situation where we have more than one logicl operators we check out for the precedence before we reach out at conclusion, for example
+int main()
+{
+	int a = 4, b = 6, result;
+	printf("d%", 4&&!0) here ! opearator has moreprecedence over && therefore it would be executed first before the && operator
+}
+
+d. RELATIONAL OPEARATOS (<, >, <=, >=, ==, !=) 
+
+This are used to compare conditions or value to take decision
+You can compare char but cannt compare string using relational operator
+How is used, for example
+3>5
+NB <,>,<=,>= have more precedence over   == and !=
+
+e. BITWISE OPERATORS
+
+This is types of operators used to perform operation at bit level(smallest memory levels) the operators include bitwise AND (&),bitwise OR(|),bitwise XOR(^),bitwise NOT(~),bitwise left shift (<<),bitwise right shift(>>) they are binary operators and require two operands to perform operations
+NB: bitwise operator is having more precedence over logical operator
+USING & OPERATOR
+This is a binary operator for example
+int a = 10, b = 5;
+c =  a & b;
+this can only be done in binary form
+10 = 1010
+5 =  0101
+10 & 5 = 0000 (this is done by doing something like multiplying them together like
+ 1010
+&0101
+_____
+ 0000 
+_____
+
+| OPERATOR
+a | b 
+ 1010
+|0101
+-----
+ 1111 ---> taking it to base 10 is ==15
+-----
+XOR OPERATOR
+This is used when comparing the operands are the same, we put 0 but if different we put 1
+ 1010
+^0101
+_____
+ 1111
+_____
+f. SPECIAL OPERATOR
+The includes , sizeof * & ->
+For COMMA OPERATOR(,)
+For example:
+int a;
+a = 5,4; (The first operand(5) will be operated and returned whiel the second operand (4) will be rejected
+But in case when you have 
+a = (5,4);
+In the above, the bracket will be evaluated and the first value will be rejected while the second operands will be evaluated and returned, so the value of the a will printed will be 4 while the 5 will be rejected
+but in case of 
+int a = (5,4)=====> the value will return error
+PLEASE TAKE NOTE OF THE BRACKET EFFECT
+int a;
+a = (printf("jenny"),2);
+the value of a will be "jenny 2" returned
+g. ++ and --
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
